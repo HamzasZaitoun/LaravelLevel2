@@ -14,8 +14,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::name('front.')->group(function () {
+    
+    // Home viwe
+    Route::get('/', function () {
+        return view('front.index');
+    })->name('index');
+    Route::get('/index', function () {
+        return view('front.index');
+    })->name('index');
+
+    Route::get('/about', function () {
+        return view('front.about');
+    })->name('about');
+
+    Route::get('/services', function () {
+        return view('front.services');
+    })->name('services');
+
+    Route::get('/contact', function () {
+        return view('front.contact');
+    })->name('contact');    
+
+});
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    })->name('index');
+});
+
+
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
 });
 
 Route::get('/dashboard', function () {
