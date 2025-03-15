@@ -31,6 +31,13 @@ class LoginRequest extends FormRequest
             'password' => ['required', 'string'],
         ];
     }
+    public function attributes(): array
+    {
+        return [
+            'email' => __('keywords.email'),
+            'password' => __('keywords.password'),
+        ];
+    }
 
     /**
      * Attempt to authenticate the request's credentials.
@@ -80,6 +87,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->string('email')) . '|' . $this->ip());
     }
 }

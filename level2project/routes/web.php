@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+/* 
+
+Front Routes
+
+*/
+
 Route::name('front.')->group(function () {
-    
+
     // Home viwe
     Route::get('/', function () {
         return view('front.index');
@@ -35,41 +43,34 @@ Route::name('front.')->group(function () {
 
     Route::get('/contact', function () {
         return view('front.contact');
-    })->name('contact');    
-
+    })->name('contact');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+|
+*/
 
-Route::name('admin.')->prefix('admin')->group(function () {
-    
-    
-    Route::middleware('auth')->group(function (): void
-     {
-        
-        Route::get('/', function ()
-         {
-            return view('admin.index');
-        })->name('index');
-        
-    });
-    require __DIR__.'/auth.php';
+Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->middleware('localeSessionRedirect', 'localizationRedirect', 'localeViewPath')->group(function () {
+
+
+    Route::middleware('auth')->group(
+        function (): void {
+
+            // Home viwe
+
+            Route::get('/', function () {
+                return view('admin.index');
+            })->name('index');
+
+            // services
+            Route::controller(ServiceController::class)->group(function () {
+                Route::resource('services', ServiceController::class);
+            });
+        }
+
+    );
+    require __DIR__ . '/auth.php';
 });
-
-
-
-
-// Route::get('/', function () {
-//     return view('front.index');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-
