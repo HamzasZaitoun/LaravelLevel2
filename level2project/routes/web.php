@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\FeatureController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -68,6 +69,11 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
             // services
             Route::controller(ServiceController::class)->group(function () {
                 Route::resource('services', ServiceController::class);
+            });
+
+            //features
+            Route::controller(FeatureController::class)->group(function () {
+                Route::resource('features', FeatureController::class);
             });
         }
 

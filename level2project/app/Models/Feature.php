@@ -1,27 +1,27 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class {{ class }} extends Model
+class Feature extends Model
 {
     use HasFactory;
 
-    protected $table = '';
-    protected $guarded =['id'];
+    protected $table = 'features';
+    protected $guarded = ['id'];
 
     /**
-    * Upload file
-    */
+     * Upload file
+     */
     const UPLOADPATH = 'imagrs/';
 
     /*
     * fields that will handel Upload documant
     */
 
-    const UPLOADFIELDS =[];
+    const UPLOADFIELDS = [];
 
     ##------------------------------- RELATIONSHIPS
 

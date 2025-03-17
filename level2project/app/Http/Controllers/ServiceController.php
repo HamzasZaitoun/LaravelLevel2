@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
+use Directory;
 
 class ServiceController extends Controller
 {
+    // private const directory = 'admin.services.';
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $services = Service::paginate(1);
+        $services = Service::paginate(config('settings.paginate'));
         return view('admin.services.index', get_defined_vars());
     }
 
@@ -22,7 +24,6 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $services = Service::paginate(1);
         return view('admin.services.create', get_defined_vars());
     }
 
@@ -31,7 +32,9 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+        $data = $request->validated();
+        Service::create($data);
+        return redirect()->route('admin.services.index')->with('success', __('keywords.created_successfully'));
     }
 
     /**
@@ -39,7 +42,8 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+
+        return view('admin.services.show', get_defined_vars());
     }
 
     /**
@@ -47,7 +51,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('admin.services.edit', get_defined_vars());
     }
 
     /**
@@ -55,7 +59,9 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-        //
+        $data = $request->validated();
+        $service->update($data);
+        return redirect()->route('admin.services.index')->with('success', __('keywords.updated_successfully'));
     }
 
     /**
@@ -63,6 +69,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->route('admin.services.index')->with('success', __('keywords.deleted_successfully'));
     }
 }

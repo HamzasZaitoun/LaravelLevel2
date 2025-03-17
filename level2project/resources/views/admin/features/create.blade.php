@@ -1,15 +1,15 @@
 @extends('admin.master')
-@section('title', __('keywords.add_new_service'))
+@section('title', __('keywords.add_new_feature'))
 
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2 class="h5 page-title ">{{ __('keywords.add_new_service') }}</h2>
+                <h2 class="h5 page-title ">{{ __('keywords.add_new_feature') }}</h2>
 
                 <div class="card shadow">
                     <div class="card-body">
-                        <form action="{{ route('admin.services.store') }}" method="POST"enctype="multipart/form-data">
+                        <form action="{{ route('admin.features.store') }}" method="POST"enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
 
@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <x-submit-button></x-submit-button>
-                                <x-cancel-button resource="services"></x-cancel-button>
+                                <x-cancel-button resource="features"></x-cancel-button>
 
                             </div>
                         </form>

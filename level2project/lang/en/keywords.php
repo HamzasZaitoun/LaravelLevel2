@@ -31,6 +31,17 @@ return [
     'add_new_service' => 'Add New Service',
     'save' => 'Save',
     'cancel' => 'Cancel',
+    'created_successfully' => 'Created successfully',
 
+    'show_service' => 'Show Service',
+    'edit_service' => 'Edit Service',
+    'updated_successfully' => 'Updated successfully',
+    'are_you_sure' => 'Are you sure?',
+    'deleted_successfully' => 'Deleted successfully',
 
+    // features module
+    'features' => 'Features',
+    'add_new_feature' => 'Add New Feature',
+    'show_feature' => 'Show Feature',
+    'edit_feature' => 'Edit Feature',
 ];
