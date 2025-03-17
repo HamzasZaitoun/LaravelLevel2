@@ -56,13 +56,7 @@
                                         </tr>
                                     @endforeach
                                 @else
-<<<<<<< HEAD
                                     <x-empty-alert></x-empty-alert>
-=======
-
-                                    <x-empty-alert></x-empty-alert>
-                                
->>>>>>> cd9c8a3dced03aa691c5724cd6abd8ee0d596bfe
                                 @endif
 
 

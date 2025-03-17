@@ -31,7 +31,6 @@
         <p class="text-muted nav-heading mt-4 mb-1">
             <span>{{ __('keywords.components') }}</span>
         </p>
-<<<<<<< HEAD
 
         {{-- services --}}
         <x-sidebar-tab href="{{ route('admin.services.index') }}" icon="fe-codesandbox"
@@ -40,9 +39,6 @@
         {{-- features --}}
         <x-sidebar-tab href="{{ route('admin.features.index') }}" icon="fe-bookmark"
             name="{{ __('keywords.features') }}"></x-sidebar-tab>
-=======
-        <x-sidebar-tab href="{{ route('admin.services.index') }}" icon="fe-codesandbox" name="{{__('keywords.services')}}"></x-sidebar-tab>
->>>>>>> cd9c8a3dced03aa691c5724cd6abd8ee0d596bfe
 
 
     </nav>
