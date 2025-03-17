@@ -11,11 +11,17 @@ class SidebarTab extends Component
     /**
      * Create a new component instance.
      */
+<<<<<<< HEAD
     public function __construct(
         public string $href,
         public string $icon,
         public string $name
     ) {
+=======
+    public function __construct(public string $href, public string $icon,
+        public string $name)
+    {
+>>>>>>> cd9c8a3dced03aa691c5724cd6abd8ee0d596bfe
         //
     }
 
