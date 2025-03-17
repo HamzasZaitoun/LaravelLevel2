@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SubscriberController;
+use App\Models\Subscriber;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -74,6 +77,16 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
             //features
             Route::controller(FeatureController::class)->group(function () {
                 Route::resource('features', FeatureController::class);
+            });
+
+       
+            //messages
+            Route::controller(MessageController::class)->group(function () {
+                Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
+            });
+            //subscribers
+            Route::controller(SubscriberController::class)->group(function () {
+                Route::resource('subscriptions', SubscriberController::class)->only(['index','destroy']);
             });
         }
 

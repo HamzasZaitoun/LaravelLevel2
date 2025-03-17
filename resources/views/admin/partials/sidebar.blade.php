@@ -39,6 +39,13 @@
         {{-- features --}}
         <x-sidebar-tab href="{{ route('admin.features.index') }}" icon="fe-bookmark"
             name="{{ __('keywords.features') }}"></x-sidebar-tab>
+        {{-- features --}}
+        <x-sidebar-tab href="{{ route('admin.messages.index') }}" icon="fe-message-square"
+            name="{{ __('keywords.messages') }}"></x-sidebar-tab>
+
+        {{-- subscriptions --}}
+        <x-sidebar-tab href="{{ route('admin.subscriptions.index') }}" icon="fe-users"
+            name="{{ __('keywords.subscriptions') }}"></x-sidebar-tab>
 
 
     </nav>

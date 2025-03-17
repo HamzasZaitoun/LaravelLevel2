@@ -13,8 +13,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $services = Message::paginate(config('settings.paginate'));
-        return view('admin.services.index', get_defined_vars());
+        $messages = Message::paginate(config('settings.paginate'));
+        return view('admin.messages.index', get_defined_vars());
     }
 
     /**
@@ -22,7 +22,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-         return view('admin.services.create', get_defined_vars());
+         return view('admin.messages.create', get_defined_vars());
     }
 
     /**
@@ -32,7 +32,7 @@ class MessageController extends Controller
     {
          $data = $request->validated();
         Message::create($data);
-        return redirect()->route('admin.services.index')->with('success', __('keywords.created_successfully'));
+        return redirect()->route('admin.messages.index')->with('success', __('keywords.created_successfully'));
     }
 
     /**
@@ -40,7 +40,8 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-         return view('admin.services.show', get_defined_vars());
+        // dd($message->email);
+         return view('admin.messages.show', get_defined_vars());
     }
 
     /**
@@ -48,7 +49,7 @@ class MessageController extends Controller
      */
     public function edit(Message $message)
     {
-       return view('admin.services.edit', get_defined_vars());
+       return view('admin.messages.edit', get_defined_vars());
     }
 
     /**
@@ -58,7 +59,7 @@ class MessageController extends Controller
     {
        $data = $request->validated();
         $message->update($data);
-        return redirect()->route('admin.services.index')->with('success', __('keywords.updated_successfully'));
+        return redirect()->route('admin.messages.index')->with('success', __('keywords.updated_successfully'));
     }
 
     /**
@@ -67,6 +68,6 @@ class MessageController extends Controller
     public function destroy(Message $message)
     {
        $message->delete();
-        return redirect()->route('admin.services.index')->with('success', __('keywords.deleted_successfully'));
+        return redirect()->route('admin.messages.index')->with('success', __('keywords.deleted_successfully'));
     }
 }

@@ -44,4 +44,16 @@ return [
     'add_new_feature' => 'Add New Feature',
     'show_feature' => 'Show Feature',
     'edit_feature' => 'Edit Feature',
+
+    // messages
+    'messages' => 'Messages',
+    'show_message' => 'Show Message',
+    'name' => 'Name',
+    'subject' => 'Subject',
+    'message' => 'Message',
+
+    // subscribers
+    'subscribers' => 'Subscribers',
+    'subscriptions' => 'Subscriptions',
+    
 ];

@@ -52,4 +52,16 @@ return [
     'updated_successfully' => 'تم تعديل الميزة بنجاح',
     'deleted_successfully' => 'تم حذف الميزة بنجاح',
 
+
+    // messages
+    'messages' => 'الرسائل',
+    'show_message' => 'عرض الرسالة',
+    'name' => 'الاسم',
+    'subject' => 'الموضوع',
+    'message' => 'الرسالة',
+
+    // subscribers
+    'subscribers' => 'المشتركين',
+    'subscriptions' => 'الاشتراكات',
+
 ];
