@@ -55,5 +55,24 @@ return [
     // subscribers
     'subscribers' => 'Subscribers',
     'subscriptions' => 'Subscriptions',
-    
+
+    // testimonials
+    'testimonials' => 'Testimonials',
+    'position' => 'Position',
+    'image' => 'Image',
+    'add_new_testimonial' => 'Add New Testimonial',
+    'show_testimonial' => 'show Testimonial',
+    'edit_testimonial' => 'Edit Testimonial',
+
+    //settings
+    'settings' => 'settings',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'facebook' => 'Facebook',
+    'twitter' => 'Twitter',
+    'instagram' => 'Instagram',
+    'linkedin' => 'Linkedin',
+    'youtube' => 'Youtube',
+    'edit_setting' => 'Edit Settings',
+
 ];

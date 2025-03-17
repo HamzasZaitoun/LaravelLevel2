@@ -47,6 +47,14 @@
         <x-sidebar-tab href="{{ route('admin.subscriptions.index') }}" icon="fe-users"
             name="{{ __('keywords.subscriptions') }}"></x-sidebar-tab>
 
+        {{-- testimonials --}}
+        <x-sidebar-tab href="{{ route('admin.testimonials.index') }}" icon="fe-message-circle"
+            name="{{ __('keywords.testimonials') }}"></x-sidebar-tab>
+
+        {{-- settings --}}
+        <x-sidebar-tab href="{{ route('admin.settings.index') }}" icon="fe-message-circle"
+            name="{{ __('keywords.settings') }}"></x-sidebar-tab>
+
 
     </nav>
 </aside>

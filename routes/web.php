@@ -5,6 +5,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\SettingController;
 use App\Models\Subscriber;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -79,14 +81,22 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
                 Route::resource('features', FeatureController::class);
             });
 
-       
+
             //messages
             Route::controller(MessageController::class)->group(function () {
                 Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
             });
             //subscribers
             Route::controller(SubscriberController::class)->group(function () {
-                Route::resource('subscriptions', SubscriberController::class)->only(['index','destroy']);
+                Route::resource('subscriptions', SubscriberController::class)->only(['index', 'destroy']);
+            });
+            //testimonials
+            Route::controller(TestimonialController::class)->group(function () {
+                Route::resource('testimonials', TestimonialController::class);
+            });
+            //settings
+            Route::controller(SettingController::class)->group(function () {
+                Route::resource('settings', SettingController::class)->only(['index', 'update']);
             });
         }
 

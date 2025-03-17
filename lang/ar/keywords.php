@@ -64,4 +64,24 @@ return [
     'subscribers' => 'المشتركين',
     'subscriptions' => 'الاشتراكات',
 
+    // testimonials
+    'testimonials' => 'التقييمات',
+    'position' => 'المنصب',
+    'image' => 'الصورة',
+    'add_new_testimonial' => 'اضافة تقييم جديد',
+    'show_testimonial' => 'عرض التقييم',
+    'edit_testimonial' => 'تعديل التقييم',
+
+    //settings
+    'settings' => 'الاعدادات',
+    'address' => 'العنوان',
+    'phone' => 'الهاتف',
+    'facebook' => 'فيسبوك',
+    'twitter' => 'تويتر',
+    'instagram' => 'انستغرام',
+    'linkedin' => 'لينكدان',
+    'youtube' => 'يوتيوب',
+    'edit_setting' => 'تعديل الاعدادات',
+
+
 ];
