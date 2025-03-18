@@ -10,6 +10,7 @@ use App\Http\Controllers\SettingController;
 use App\Models\Subscriber;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,27 +30,21 @@ Front Routes
 
 */
 
-Route::name('front.')->group(function () {
+Route::name('front.')->controller(FrontController::class)->group(function () {
 
+    Route::post('/subscriber/store', 'subescriberStore')->name('subscriber.store');
     // Home viwe
-    Route::get('/', function () {
-        return view('front.index');
-    })->name('index');
-    Route::get('/index', function () {
-        return view('front.index');
-    })->name('index');
+    Route::get('/', 'index')->name('index');
 
-    Route::get('/about', function () {
-        return view('front.about');
-    })->name('about');
+    // About viwe
+    Route::get('/about', 'about')->name('about');
 
-    Route::get('/services', function () {
-        return view('front.services');
-    })->name('services');
+    // Services viwe
+    Route::get('/services', 'services')->name('services');
 
-    Route::get('/contact', function () {
-        return view('front.contact');
-    })->name('contact');
+    // contact viwe 
+    Route::get('/contact', 'contact')->name('contact');
+    Route::post('/contact/store', 'storeContact')->name('contact.store');
 });
 
 /*

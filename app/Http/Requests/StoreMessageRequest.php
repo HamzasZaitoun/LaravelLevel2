@@ -11,7 +11,7 @@ class StoreMessageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,13 +22,16 @@ class StoreMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'title' => 'required|string',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
         ];
     }
-      public function attributes(): array
+    public function attributes(): array
     {
         return [
-          //  'title' => __('keywords.title'),
+            //  'title' => __('keywords.title'),
         ];
     }
 }
